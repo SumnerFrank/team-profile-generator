@@ -6,6 +6,19 @@ const Manager = require('lib/Manager.js');
 const Engineer = require('lib/Engineer.js');
 const Intern = require('lib/Intern.js');
 
+const empType = [
+    {
+        type: 'confirm',
+        name: 'newEmp',
+        message: 'Is this person a new employee?'
+    },
+    {
+        type: 'list',
+        name: 'empType',
+        message: 'Is this person a manager or an engineer?'
+    },
+]
+
 const addManager = [
     {
         type: 'input',
@@ -28,6 +41,7 @@ const addManager = [
         message: 'What is their office number?'
     },
 ]
+
 const addEngineer = [
     {
         type: 'input',
@@ -50,6 +64,7 @@ const addEngineer = [
         message: 'What is their office number?'
     },
 ]
+
 const addIntern = [
     {
         type: 'input',

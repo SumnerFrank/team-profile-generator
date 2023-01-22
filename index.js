@@ -10,13 +10,13 @@ const empType = [
     {
         type: 'confirm',
         name: 'newEmp',
-        message: 'Is this person a new employee?'
+        message: 'Is this person a new employee?',
     },
     {
         type: 'list',
         name: 'empType',
-        message: 'Is this person a manager or an engineer?',
-        choices: ['Manager', 'Engineer']
+        message: 'What type of employee is this?',
+        choices: ['Manager', 'Engineer', 'Intern']
     },
 ]
 
@@ -91,12 +91,18 @@ const addIntern = [
 
 function init() {
     inquirer.prompt(empType).then((answers) => {
-        if (answers === 'No') {
-            console.log('This field is only for NEW employees')
-        } else {
-            //continue to next question
-        };
-    })
+        if (answers.empType === 'Manager') {
+            function initManager() {
+                inquirer.prompt(addManager)
+        } initManager(); 
+    } else if (answers.empType === 'Engineer'){
+            function initEngineer() {
+                inquirer.prompt(addEngineer)
+        } initEngineer();
+    } else function initIntern() {
+            inquirer.prompt(addIntern)}
+            initIntern();
+    });
 }
 
 init();

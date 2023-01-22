@@ -91,6 +91,9 @@ const addIntern = [
 
 function init() {
     inquirer.prompt(empType).then((answers) => {
+        // if (answers.newEmp === 'No'){
+        //     console.log('This is only for NEW employees')
+        // }
         if (answers.empType === 'Manager') {
             function initManager() {
                 inquirer.prompt(addManager)

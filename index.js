@@ -1,14 +1,16 @@
 //Dependencies
 const inquirer = require('inquirer'); 
-const generateSite = require('utils/generateSite.js');
+const writeFile = require('./utils/generateSite.js');
 const fs = require('fs');
 
 //Employee libraries
-const Manager = require('lib/Manager.js');
-const Engineer = require('lib/Engineer.js');
-const Intern = require('lib/Intern.js');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
 
 //prompts to add data to libraries
+
+//Manager prompts 
 const addTeamManager = teamInfo => {
     return inquirer.prompt([
         {
@@ -29,6 +31,7 @@ const addTeamManager = teamInfo => {
     ])
 }
 
+//non-Manager employee prompts 
 const addEmp = employeeInfo => {
     return inquirer.prompt([
     {
@@ -72,8 +75,11 @@ const addEmp = employeeInfo => {
     }
 ])}
 
-
+//main application initiation function
 function init() {
-    
+
 };
+
+
+//initiates application
 init();

@@ -9,7 +9,28 @@ const Engineer = require('lib/Engineer.js');
 const Intern = require('lib/Intern.js');
 
 //prompts to add data to libraries
-const addEmp = [
+const addTeamManager = teamInfo => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Who is the manager?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter the manager email address'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter the manager ID number'
+        },
+    ])
+}
+
+const addEmp = employeeInfo => {
+    return inquirer.prompt([
     {
         type: 'list',
         name: 'role',
@@ -49,8 +70,10 @@ const addEmp = [
         name: 'AnotherEmp',
         message: 'Would you like to add another employee?'
     }
-]
+])}
 
 
-function init() {};
+function init() {
+    
+};
 init();

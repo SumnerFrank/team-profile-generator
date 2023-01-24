@@ -1,6 +1,6 @@
 //Dependencies
 const inquirer = require('inquirer'); 
-const writeFile = require('./utils/generateSite.js');
+// const writeFile = require('./utils/generateSite.js');
 const fs = require('fs');
 
 //Employee libraries
@@ -8,7 +8,7 @@ const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 
-//employee Array
+//empty employee Array
 const empArray = [''];
 
 //prompts to add data to libraries
@@ -111,6 +111,7 @@ const addEmp = teamInfo => {
 
 //main application initiation function
 function init() {
+    console.log("does this work")
 };
 
 

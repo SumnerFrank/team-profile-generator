@@ -4,10 +4,12 @@ const writeFile = require('./utils/generateSite.js');
 const fs = require('fs');
 
 //Employee libraries
-const Employee = require('./lib/Employee.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
+
+//employee Array
+const empArray = [''];
 
 //prompts to add data to libraries
 
@@ -23,16 +25,30 @@ const addTeamManager = managerInfo => {
         {
             type: 'input',
             name: 'email',
-            message: 'Please enter the manager email address'
+            message: 'Please enter the manager email address.'
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Enter the manager ID number'
-            // validate: 
+            message: 'Enter the manager ID number.'
         },
+        {
+            type: 'input',
+            name: 'officeNum',
+            message: 'Enter the manager office number.'
+        },
+        {
+            type: 'confirm',
+            name: 'AnotherEmp',
+            message: 'Would you like to add another employee?'
+        }
     ])
-}
+    //pushes manager info to employee array
+    .then(managerInfo => {
+        const manager = new Manager 
+        (managerInfo.name, managerInfo.email, managerInfo.id, managerInfo.officeNum);
+    })
+};
 
 //non-Manager employee prompts 
 const addEmp = teamInfo => {
@@ -42,7 +58,6 @@ const addEmp = teamInfo => {
         name: 'role',
         message: 'To add an employee, choose a role listed below:',
         choices: ['Intern', 'Engineer', 'No additional team members']
-        // validate: 
     },
     {
         type: 'input',
@@ -77,11 +92,14 @@ const addEmp = teamInfo => {
         name: 'AnotherEmp',
         message: 'Would you like to add another employee?'
     }
-])}
+]).then(teamInfo =>{
+    //need function to pull team info
+})
+};
 
 //main application initiation function
 function init() {
-    inquirer.prompt(questions).then((answers) => {
+    inquirer.prompt(addTeamManager).then((answers) => {
         fs.writeFile('index.html', generateSite(answers),
         (err) => err ? console.log(err) : console.log('successfuly created index.html')
         );

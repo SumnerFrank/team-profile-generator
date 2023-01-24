@@ -93,17 +93,24 @@ const addEmp = teamInfo => {
         message: 'Would you like to add another employee?'
     }
 ]).then(teamInfo =>{
-    //need function to pull team info
+    if (teamInfo.role == 'Intern') {
+        const intern = new Intern
+        (teamInfo.name, teamInfo.email, teamInfo.school);
+        empArray.push(intern);
+    } else if (teamInfo.role == 'Engineer') {
+        const engineer = new Engineer
+        (teamInfo.name, teamInfo.email, teamInfo.github);
+        empArray.push(engineer);
+    } if (teamInfo.AnotherEmp) {
+        return addEmp(empArray);
+    } else {
+        return empArray;
+    }
 })
 };
 
 //main application initiation function
 function init() {
-    inquirer.prompt(addTeamManager).then((answers) => {
-        fs.writeFile('index.html', generateSite(answers),
-        (err) => err ? console.log(err) : console.log('successfuly created index.html')
-        );
-    })
 };
 
 

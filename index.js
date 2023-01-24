@@ -4,6 +4,7 @@ const writeFile = require('./utils/generateSite.js');
 const fs = require('fs');
 
 //Employee libraries
+const Employee = require('./lib/Employee.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
@@ -11,12 +12,13 @@ const Intern = require('./lib/Intern.js');
 //prompts to add data to libraries
 
 //Manager prompts 
-const addTeamManager = teamInfo => {
+const addTeamManager = managerInfo => {
     return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
             message: 'Who is the manager?'
+            // validate: 
         },
         {
             type: 'input',
@@ -27,18 +29,20 @@ const addTeamManager = teamInfo => {
             type: 'input',
             name: 'id',
             message: 'Enter the manager ID number'
+            // validate: 
         },
     ])
 }
 
 //non-Manager employee prompts 
-const addEmp = employeeInfo => {
+const addEmp = teamInfo => {
     return inquirer.prompt([
     {
         type: 'list',
         name: 'role',
         message: 'To add an employee, choose a role listed below:',
         choices: ['Intern', 'Engineer', 'No additional team members']
+        // validate: 
     },
     {
         type: 'input',
@@ -77,7 +81,11 @@ const addEmp = employeeInfo => {
 
 //main application initiation function
 function init() {
-
+    inquirer.prompt(questions).then((answers) => {
+        fs.writeFile('index.html', generateSite(answers),
+        (err) => err ? console.log(err) : console.log('successfuly created index.html')
+        );
+    })
 };
 
 

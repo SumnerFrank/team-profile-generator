@@ -1,0 +1,32 @@
+:root {
+ --dark: #1C2321;
+ --darkBlue: #SE6572;
+ --blue: #7D98A1;
+ --lightBlue: #A9B4C2;
+ --light: #EEF1EF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light);
+}
+
+.mainBanner {
+    background-color: var(--darkBlue);
+    color: var(--light);
+}
+
+.card {
+    background-color: var(--blue);
+}
+
+.cardHead {
+    background-color: var(--darkBlue);
+}
+
+.cardBody {
+    background-color: var(--lightBlue);
+}

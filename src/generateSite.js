@@ -44,3 +44,5 @@ const generateCards = (team) => {
 //create gen.cards fx
 //update card data
 //update CSS
+
+module.exports = generateHtml;

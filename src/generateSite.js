@@ -13,28 +13,30 @@ const generateHtml = (team) => {
 //Engineer Card
 `<div class="row col-md-4">
     <div class="card">
-        <div class="cardHead">${engineer.name}</div>
-        <div class="cardBody">Role:${engineer.getRole()}</div>
-        <div class="cardBody">ID: ${engineer.id}</div>
-        <div class="cardBody">Email:${engineer.email}</div>
-        <div class="cardBody">GitHub:${engineer.gitHubName}</div>
+        <div class="cardHead">${team[i].name}</div>
+        <div class="cardBody">Role:${team[i].getRole()}</div>
+        <div class="cardBody">ID: ${team[i].id}</div>
+        <div class="cardBody">Email:${team[i].email}</div>
+        <div class="cardBody">GitHub:${team[i].gitHubName}</div>
     </div>
 </div>`
 
 //Intern Card 
 `<div class="row col-md-4">
     <div class="card">
-        <div class="cardHead">${intern.name}</div>
-        <div class="cardBody">Role:${intern.getRole()}</div>
-        <div class="cardBody">ID: ${intern.id}</div>
-        <div class="cardBody">Email:${intern.email}</div>
-        <div class="cardBody">School:${intern.school}</div>
+        <div class="cardHead">${team.name[i]}</div>
+        <div class="cardBody">Role:${team[i].getRole()}</div>
+        <div class="cardBody">ID: ${team[i].id}</div>
+        <div class="cardBody">Email:${team[i].email}</div>
+        <div class="cardBody">School:${team[i].school}</div>
     </div>
 </div>`
 }
 
 const generateCards = (team) => {
-    
+    for (let i = 0; i < empArray.length; i++) {
+        
+    }
 };
 
 

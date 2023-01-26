@@ -8,6 +8,7 @@ const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const { addListener } = require('process');
+const generateHtml = require('./src/generateSite.js');
 
 //empty employee Array
 const empArray = [];
@@ -54,8 +55,8 @@ const addTeamManager = managerInfo => {
         if (managerInfo.AnotherEmp) {
             addEmp();
         } else {
-            console.log('build html')
-            console.log(empArray)
+            generateHtml(managerInfo);
+            console.log('managerInfo fun', empArray)
         }
     })
 };
@@ -75,8 +76,8 @@ const addEmp = teamInfo => {
     } else if (teamInfo.role == 'Engineer') {
         addEngin();
     } if (teamInfo.role == 'No additional team members') {
-        console.log('build html')
-        console.log(empArray)
+        generateHtml(teamInfo);
+        console.log('teamInfo fun', empArray)
     } 
 })
 };
@@ -121,8 +122,8 @@ const addIntern = () => {
         if (teamInfo.AnotherEmp) {
             addEmp();
         } else {
-            console.log('build html')
-            console.log(empArray)
+            generateHtml(teamInfo);
+            console.log('intern func', empArray)
         }
     })
 }
@@ -161,8 +162,8 @@ const addEngin = () => {
         if (teamInfo.AnotherEmp) {
             addEmp();
         } else {
-            console.log('build html');
-            console.log(empArray)
+            generateHtml(teamInfo);
+            console.log('engineer func', empArray)
             //generateHtml(empArray);
         }
     })

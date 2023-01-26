@@ -99,7 +99,7 @@ const addEmp = teamInfo => {
         empArray.push(intern);
     } else if (teamInfo.role == 'Engineer') {
         const engineer = new Engineer
-        (teamInfo.name, teamInfo.email, teamInfo.github);
+        (teamInfo.name, teamInfo.email, teamInfo.gitHubName);
         empArray.push(engineer);
     } if (teamInfo.AnotherEmp) {
         return addEmp(empArray);

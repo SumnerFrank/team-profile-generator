@@ -22,12 +22,20 @@ body {
 
 .card {
     background-color: var(--blue);
+    color: var(--light);
+    margin: 10%;
+    border: solid var(--dark);
+    text-align: left;
 }
 
 .cardHead {
     background-color: var(--darkBlue);
+    margin: 15px;
+    border: solid var(--lightBlue);
 }
 
 .cardBody {
     background-color: var(--lightBlue);
+    margin: 20px;
+    border: solid var(--darkBlue)
 }

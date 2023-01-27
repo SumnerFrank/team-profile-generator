@@ -1,6 +1,6 @@
 //Dependencies
 const inquirer = require('inquirer'); 
-// const writeFile = require('./utils/generateSite.js');
+const writeFile = require('./utils/generateSite.js');
 const fs = require('fs');
 
 //Employee libraries
@@ -55,7 +55,7 @@ const addTeamManager = managerInfo => {
         if (managerInfo.AnotherEmp) {
             addEmp();
         } else {
-            generateHtml(managerInfo);
+            // generateHtml(managerInfo);
             console.log('managerInfo fun', empArray)
         }
     })
@@ -76,7 +76,7 @@ const addEmp = teamInfo => {
     } else if (teamInfo.role == 'Engineer') {
         addEngin();
     } if (teamInfo.role == 'No additional team members') {
-        generateHtml(teamInfo);
+        // generateHtml(teamInfo);
         console.log('teamInfo fun', empArray)
     } 
 })
@@ -122,7 +122,7 @@ const addIntern = () => {
         if (teamInfo.AnotherEmp) {
             addEmp();
         } else {
-            generateHtml(teamInfo);
+            // generateHtml(teamInfo);
             console.log('intern func', empArray)
         }
     })
@@ -162,7 +162,7 @@ const addEngin = () => {
         if (teamInfo.AnotherEmp) {
             addEmp();
         } else {
-            generateHtml(teamInfo);
+            // generateHtml(teamInfo);
             console.log('engineer func', empArray)
             //generateHtml(empArray);
         }
